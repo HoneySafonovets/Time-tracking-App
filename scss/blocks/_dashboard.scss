@@ -1,0 +1,106 @@
+.dashboard {
+  min-height: 100vh;
+  padding: 4rem 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard__content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;
+  grid-template-columns: repeat(1, minmax(300px, 330px));
+}
+
+.dashboard__person {
+  width: 100%;
+  background-color: $blue-800;
+  border-radius: $radius;
+}
+
+.dashboard__item {
+  width: 100%;
+  padding-top: 2.15rem;
+  background-color: white;
+  border-radius: $radius;
+}
+
+.tracking-card {
+  background-color: $blue-800;
+  border-radius: $radius;
+
+  padding: 1.25rem;
+  position: relative;
+  bottom: -2px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+  @media (hover: hover) {
+    &:hover {
+      transition: background-color 0.3s ease-in;
+      background-color: $blue-500;
+    }
+    &:not(:hover) {
+      transition: background-color 0.3s ease-in;
+      background-color: $blue-800;
+    }
+  }
+}
+
+.tracking-card__body, .tracking-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tracking-card__menu {
+  cursor: pointer;
+}
+
+.tracking-card__title {
+  font-weight: $weight-normal;
+  font-size: $fs-base;
+  margin: 0;
+}
+
+.tracking-card__time {
+  font-size: 32px;
+}
+.tracking-card__prev-period {
+  font-size: 13px;
+  color: $blue-200;
+}
+
+@media (min-width: 1024px) {
+  .dashboard__content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .dashboard__person {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .tracking-card__header {
+    margin-bottom: 0.75rem;
+  }
+  .tracking-card__body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tracking-card__time {
+    margin-bottom: 0.75rem;
+    font-size: 48px;
+  }
+}

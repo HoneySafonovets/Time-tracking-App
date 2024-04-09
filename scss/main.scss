@@ -1,0 +1,10 @@
+// Base styles
+@import './base/reset';
+@import './base/vars';
+@import './base/base';
+
+// Blocks styles
+@import './blocks/dashboard';
+@import './blocks/info-card';
+@import './blocks/status';
+@import './blocks/footer';
